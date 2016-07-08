@@ -3,11 +3,7 @@ import $ from "jquery"
 import {key} from "./secrets.js"
 import {news} from "./news.js"
 import {locationHTML} from "./location.js"
-<<<<<<< HEAD
-import {getSpecials} from "./specials.js"
-=======
-import {getSpecial} from "./specials"
->>>>>>> master
+import {getSpecial} from "./specials.js"
 var baseURL = `https://api.flickr.com/services/`
 
 function get() {
