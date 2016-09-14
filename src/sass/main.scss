@@ -4,7 +4,6 @@
   -moz-box-sizing: border-box;
   filter: grayscale(100%);
   -webkit-filter: grayscale(100%);
-  position: relative;
   z-index: 0;
 }
 
@@ -12,25 +11,26 @@
   display: none;
 }
 
-.container{
-  position: relative;
-}
 
-@import url(http://weloveiconfonts.com/api/?family=fontawesome|maki);
+// Because this import comes from a site that does not use HTTPS,
+// it broke our webpage when people viewed it with an https:// prefix. Added the Font Awesome CDN script to
+// index.html to replace icon functionality in the menu.
+// @import url(http://weloveiconfonts.com/api/?family=fontawesome|maki);
 
-/* fontawesome */
-[class*="fontawesome-"]:before {
-  font-family: 'FontAwesome', sans-serif;
-}
+// /* fontawesome */
+// [class*="fontawesome-"]:before {
+//   font-family: 'FontAwesome', sans-serif;
+// }
 
-/* maki */
-[class*="maki-"]:before {
-  font-family: 'maki', sans-serif;
-}
+// /* maki */
+// [class*="maki-"]:before {
+//   font-family: 'maki', sans-serif;
+// }
 
 .container {
+  position: relative;
   width: 950px;
-  margin: 0 auto;
+  margin: 0 auto 0 100px;
 }
 
 header {
@@ -42,6 +42,13 @@ header {
   border-bottom: solid 1px rgb(179, 179, 179)
 }
 
+.show-nav-links{
+  background: white;
+  width: 70px;
+  height: 40px;
+  padding: 0 5px;
+  border-radius: 4px;
+}
 
 .logo {
   // width: 300px;
@@ -84,25 +91,30 @@ header {
 }
 
 
-// nav {
-//   position: fixed;
-//   top: 0;
-//   left: 10px;
-//   display: flex;
-//   flex-direction: column;
-//   z-index: 1;
-//   a {
-//     text-decoration: none;
-//     font-size: 13px;
-//     margin: 5px 0 0 0;
-//     &:first-child {
-//       margin-top: 10px;
-//     }
-//     &:last-child {
-//       margin-top: 15px;
-//     }
-//   }
-// }
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  z-index: 1;
+  padding: 10px;
+  background: white;
+  border-radius: 4px;
+  height: 100%;
+  width: 90px;
+  a {
+    text-decoration: none;
+    font-size: 13px;
+    margin: 5px 0 0 0;
+    &:first-child {
+      margin-top: 10px;
+    }
+    &:last-child {
+      margin-top: 15px;
+    }
+  }
+}
 
 
 .photoContainer {
@@ -163,7 +175,6 @@ header {
     display: -webkit-box;
     -webkit-line-clamp: 9;
     -webkit-box-orient: vertical;
-    text-overflow: -o-ellipsis-lastline;
     max-width: 100%;
     margin: 0 10px;
     padding: 0 10px;
@@ -172,10 +183,12 @@ header {
     line-height: 1.5em;
     position: relative;
     &:after {
-      content: "read more >";
+      content: ". . . read more >";
       position: absolute;
       top: 120px;
       right: 0;
+      background: #ebebeb;
+      padding-left: 5px;
     }
   }
 }
@@ -302,6 +315,10 @@ header {
   }
 }
 
+.feature {
+  margin-right: 10px;
+}
+
 .featureHeader {
   margin-top: 30px;
   .story,
@@ -313,6 +330,9 @@ header {
     height: 50px;
     letter-spacing: 0.06em;
     justify-content: center;
+    &:hover{
+      cursor: pointer;
+    }
   }
   .story {
     width: 125px;
@@ -331,27 +351,18 @@ header {
 }
 .glow {
   box-shadow: 0px 0px 3px 3px grey;
+  width: 15px;
+  height: 15px;
 }
 
 .inactive {
-  border-bottom: solid 1px black;
+  border-bottom: solid 1px #DDDDDD;
 }
-
-// .active {
-//   border: solid 1px #DDD;
-//   border-bottom: solid 1px #DDDDDD;
-// }
 
 .active {
-<<<<<<< HEAD
   border: solid 1px #DDDDDD;
-=======
-  border: solid 1px black;
->>>>>>> parent of 511fb21... as good as its gonna get
   border-bottom: none;
 }
-
-
 .hidden {
   display: none;
 }
@@ -459,7 +470,7 @@ header {
   }
 }
 
-.itemLine:before {
+.itemLine:before{
     content: '';
     position: absolute;
     bottom: 0.3rem;
@@ -480,14 +491,14 @@ header {
   position: relative;
 }
 
-.itemName {
+.itemName{
   position: relative;
   background: white;
   font-size: 16px;
   font-weight: bold
 }
 
-.itemPrice {
+.itemPrice{
   font-weight: normal;
   font-size: 12px;
   background: white;
@@ -496,17 +507,17 @@ header {
   top: 2px;
 }
 
-.itemDescription {
+.itemDescription{
   display: flex;
   justify-content: space-between;
 }
 
-.buttonsUL {
+.buttonsUL{
   display: flex;
   align-items: center;
   padding-left: 16px;
   margin-right: 3px;
-  border-left: 1px solid #D4D4D4;
+  border-left: 1px solid #D4D4D4;  
   li{
     list-style: none;
     margin-right: 5px;
@@ -519,7 +530,7 @@ header {
   }
 }
 
-.ourDinner {
+.ourDinner{
   font-size: 20px;
   font-style: italic;
   padding: 35px 0 17px 12px;
@@ -557,13 +568,7 @@ header {
   list-style: none;
 }
 
-.items {
-  display: flex;
-  flex-direction: column;
-  margin: 10px 0;
-}
-
-.menButtonDiv {
+.menButtonDiv{
     position: absolute;
     height: 110px;
     width: 247px;
@@ -575,7 +580,7 @@ header {
     padding: 0 12px 0 12px;
 }
 
-.triangle {
+.triangle{
       position: absolute;
       top: -14px;
       left: 185px;
@@ -586,7 +591,7 @@ header {
       border-color: transparent transparent #e7e7e7 transparent;
     }
 
-.triangle2 {
+.triangle2{
     position: absolute;
     top: -15px;
     left: 184px;
@@ -598,7 +603,7 @@ header {
     z-index: -1;
 }
 
-.menButtonDivHeader {
+.menButtonDivHeader{
     border-bottom: 1px solid #D3D3D3;
     color: #5C5C5C;
     font-weight: bold;
@@ -606,12 +611,12 @@ header {
     padding: 0 0 7px 0;
 }
 
-.menButtonMessage {
+.menButtonMessage{
   color: #A1A1A1;
   font-size: 9px;
 }
 
-.descriptionP {
+.descriptionP{
   margin: 0 0 0 0;
   padding: 24px 16px 41px 0;
   width: 538px;
@@ -622,41 +627,29 @@ header {
   display: flex;
   justify-content: space-between;
   p {
-    margin: 0 0 0 2px;
+    margin: 0;
   }
 }
 
 .item-title {
   font-weight: 600;
   font-size: 1em;
-  white-space: nowrap;
-  overflow: hidden;
-  &::after {
-    content: "........................................................................................................................................................................................................................................................";
-    width: 300px;
-    font-size: 0.4em;
-    letter-spacing: 0.2em;
-    color: rgb(92, 92, 92)
-  }
 }
 
 .item-price {
   font-size: 0.9em;
-  color: rgb(92, 92, 92)
 }
 
 .item-description {
   font-size: 0.8em;
-  width: 530px;
-  border-right: solid rgb(217, 217, 217) 1px;
-  color: rgb(92, 92, 92)
+  max-width: 80%;
 }
 
 .item-info {
   display: flex;
   justify-content: space-between;
   p {
-    margin: 5px 0 5px 20px;
+    margin: 0;
   }
 }
 
@@ -665,37 +658,18 @@ header {
   min-width: 15%;
   max-width: 15%;
   justify-content: space-between;
-  margin-top: 12px;
   li {
     position: relative;
     list-style: none;
-    background-color: lightgray;
-    width: 20px;
-    height: 20px;
-    border-radius: 3px;
-    display: flex;
-    justify-content: center;
-    padding-top: 2px;
     p {
       margin: 0;
       position: absolute;
-      left: -30px;
-      top: 25px;
+      right: 10px;
+      top: 20px;
       background-color: rgb(231, 231, 231);
       border: solid black 1px;
     }
   }
-}
-
-#sides {
-  .item-info {
-    justify-content: flex-end;
-  }
-}
-
-.top {
-  position: relative;
-  z-index: 1;
 }
 
 .itemDescription {
@@ -726,25 +700,6 @@ header {
   }
 
 footer {
-
   border-top: 1px solid #CACACA;
   font-size: 10px;
-  display: flex;
-  flex-direction: column;
-  p {
-    margin: 2px 0 0 10px;
-    &:first-child {
-      margin: 10px 0 0 0;
-    }
-    &:last-child {
-      margin-bottom: 20px;
-    }
-  }
 }
-<<<<<<< HEAD
-=======
-
-
-
-
->>>>>>> parent of 511fb21... as good as its gonna get

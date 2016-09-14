@@ -1,24 +1,12 @@
-#### Week 5 Project - Restaurant Page
----
-##### First Team Project
----
+# Humdrum Grill
 
-##### javaScript Tools
-* Used `$.ajax()` to pull images from flickr
-* Used `.addClass` and `.removeClass` to add 'accordion' affect to the menu nav.
+A single-page restaurant website coded according to a set of mockup images provided up-front.
 
-##### CSS Tools
-* Used to cut off text and add "..." to end of latest news paragraph.
-  ``` CSS
-  display: -webkit-box;
-  
-  -webkit-line-clamp: 9;
-  
-  -webkit-box-orient: vertical;
-  
-  text-overflow: -o-ellipsis-lastline;
-  ```
+## Live on Surge at: https://williamjohnsonjr-humdrumgrill.surge.sh/
 
-[Post Merge Disaster Surge](http://tiy-humdrum-project.surge.sh/) (Jenna - after merge conflict)
+Will Johnson: https://github.com/WilliamJohnsonJr
 
-[Post Merge Disaster Surge](http://narrow-boat.surge.sh) (Will - after merge conflict)
+Jenna Rajani: https://github.com/jjrajani
+
+##Tools used:
+HTML, Sass/SCSS, JavaScript, jQuery, AJAX, ES6.
